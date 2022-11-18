@@ -1,6 +1,8 @@
 import Logo from './imgs/logo.png'
 import Banner1 from './imgs/teste2.png'
 import carrinho from './imgs/carrinho-compra.png'
+import { Link } from 'react-router-dom'
+import Calendar from 'react-calendar';
 
 
 function Home() {
@@ -30,7 +32,13 @@ function Home() {
                               </ul>
                           </li>
                           <li><a href="/" id="letter">Ofertas</a></li>
-                          <li><a href="/" id="letter">Serviços</a></li>
+                          <li><a href="/" id="letter">Serviços</a>
+                          <ul>
+                            <li>
+                              <Link to="/agendamento">Banho e Tosa</Link>
+                            </li>
+                          </ul>
+                          </li>
                   </ul>
   
   

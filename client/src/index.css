@@ -12,6 +12,17 @@ body{
 
 }
 
+.topoAg{
+  background-color:rgb(248, 239, 115);
+  height: 100px;
+  width: 100%;
+}
+
+.topoAg, h1, h2{
+  text-align: center;
+  color: rgb(254, 115, 0);
+}
+
 .menubuttons{
   margin-top: 72px;
   height: 40px;
@@ -110,4 +121,12 @@ nav {
 .menubuttons ul li:hover ul{
   display: block;
   position: absolute;
+}
+
+.calendar{
+  margin: auto;
+}
+
+.divCalendar{
+  padding-top: 20px;
 }
