@@ -1,0 +1,173 @@
+/* admin login */
+
+.admin-main-div{
+    margin: 15vh 20vh;
+    text-align: center;
+}
+
+.admin-form{
+    margin-top: 5vh;
+}
+
+#adminUser{
+    width: 300px;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: rgb(254, 115, 0) 2px solid;
+    border-radius: 3px;
+}
+
+#adminPass{
+    margin-top: 2vh;
+    width: 300px;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: rgb(254, 115, 0) 2px solid;
+    border-radius: 3px;
+}
+
+#adminButton{
+    color: white;
+    margin-top: 2vh;
+    width: 333px;
+    font-size: 20px;
+    padding: 10px 0;
+    background-color: rgb(254, 115, 0);
+    border-width: 0px;
+    border-radius: 3px;
+}
+
+
+
+/* admin produtos */
+
+.admin-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+}
+
+.admin-table{
+    width: 100%;
+}
+
+.edit-item{
+    display: inline-block;
+    border: gray solid 1px;
+    color: gray;
+    padding: 10px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.delete-item{
+    display: inline-block;
+    border: red solid 1px;
+    color: red;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.insert-new-modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.insert-new-modal-top{
+    text-align: center;
+}
+
+.create-new-product{
+    display: inline-block;
+    margin: 6px 0 5vh 0;
+    font-size: 28px;
+}
+
+.close-insert-new-modal{
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 2px 9px;
+    background-color: white;
+    color: rgb(255, 115, 0);
+}
+
+.close-insert-new-modal:hover{
+    color: black;
+}
+
+.new-modal-container{
+    width: 50vh;
+    margin-bottom: 20vh;
+    background-color: rgb(255, 115, 0);
+    padding: 5vh;
+    color: white;
+}
+
+.input-new-modal{
+    margin-top: 3px;
+    margin-bottom: 20px;
+    border: white 1px solid;
+    border-radius: 2px;
+    font-size: 18px;
+}
+
+.header-crud{
+    min-width: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.item-crud{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.crud-id{
+    width: 5%;
+}
+
+.crud-img{
+    width: 10%;
+}
+
+.crud-name{
+    width: 20%;
+}
+
+.crud-desc{
+    width: 35%;
+}
+
+.crud-price{
+    width: 10%;
+}
+
+.crud-act{
+    width: 20%;
+}
+
+.crud-line{
+    display: inline-block;
+}
+
+.edit-item-p{
+    margin: 0;
+}

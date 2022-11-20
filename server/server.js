@@ -16,10 +16,6 @@ app.use(fileupload({
 
 app.use(cors())
 
-app.get('/', (req,res) => {
-    res.json([{'teste': 'parametro home'}])
-})
-
 app.get('/agendamento', (req,res) => {
     res.json([{'teste': 'parametro agendamento'}])
 })
@@ -46,6 +42,25 @@ app.get('/item', function(req,res){
     })
 })
 
+app.get('/admin', function(req,res){
+    db.query(`SELECT * FROM petshop.itens`, function(erro, resultadoItens){
+        if(erro){
+            throw erro;
+        }
+        res.json([{
+            itens: resultadoItens
+        }])
+    })
+})
+
+app.post("/admin/insertItem", function(req,res){
+    db.query(`INSERT INTO petshop.itens(nomeItem, imgUrl, precoItem, descricaoItem) VALUES (?,?,?,?)`,
+    [req.body.nome, req.body.img, req.body.preco, req.body.desc], function(erro){
+        if(erro){
+            res.status(200).send('Erro: ' + erro)
+        }
+    })
+})
 
 // ficar abaixo de tudo
 app.listen(port, () => {

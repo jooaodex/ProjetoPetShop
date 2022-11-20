@@ -1,15 +1,28 @@
 import { useState, useEffect } from "react";
 import api from '../api.js'
+import { useLocation } from "react-router-dom";
 
 function Itens() {
 
     const [parametros, setParametros] = useState([])
-    const [itens, setItens] = useState([])
+
+    const useQuery = () => new URLSearchParams(useLocation().search);
+    const query = useQuery();
+    const search = query.get('search');
 
     useEffect(() => {
         api.get('/itens').then(res => {
             let parametros = (res.data[0].itens)
-            setParametros(parametros)
+
+            if (search == null || search == ""){
+                setParametros(parametros)
+            }
+            else {
+                let filter = parametros.filter(
+                    i => i.nomeItem.toLowerCase().includes(search.toLowerCase())
+                )
+                setParametros(filter)
+            }
         })
     }, [])
 

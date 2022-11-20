@@ -2,10 +2,6 @@
     margin: 5vh 15vh;
 }
 
-.items-grid-container{
-
-}
-
 .items-grid{
     display: inline-grid;
     grid-template-columns: repeat(5, 1fr);
@@ -71,10 +67,6 @@
     min-height: 30%;
     color: black;
     padding: 5px 20px;
-}
-
-.item-name-container{
-    
 }
 
 .item-name{
