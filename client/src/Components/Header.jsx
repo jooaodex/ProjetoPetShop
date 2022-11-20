@@ -1,0 +1,116 @@
+import * as React from 'react';
+import { useState, useEffect } from "react";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Logo from '../Pages/imgs/logo.png'
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { styled, alpha } from '@mui/material/styles';
+import { Divider } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import api from '../api.js'
+import { useLocation } from "react-router-dom";
+
+
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    transition: '0.3s',
+    borderRadius: '10px',
+    backgroundColor: alpha('#f7f7f7', 0.15),
+    '&:hover': {
+      backgroundColor: alpha('#f7f7f7', 0.25),
+    },
+    marginLeft: 40,
+    marginRight: 30,
+    width: '100%',
+  }));
+  
+const InputBaseStyled = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      width: '90ch',
+    },
+}));
+
+const SearchIconStyled = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    color: '#f7f7f7',
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+
+const ButtonStyled = styled(Button)({
+    fontSize: 18,
+    borderRadius: '0px',
+    padding: '15px 97px 15px 97px',
+    height: '100%',
+    color: '#f7f7f7',
+    '&:hover': {
+        color: '#f7f7f7',
+        backgroundColor: '#c1aafa' ,
+    }
+});
+
+export default function Header() {
+    const item = "/item?id=1"
+
+  return (
+    <Box sx={{ flexGrow: 1, top: 0, position: 'sticky'}}>
+        <AppBar sx={{ backgroundColor: '#AA96DA', top: 0, position: 'sticky' }}>
+            <Toolbar sx={{ marginLeft: '20%', marginRight: '20%'}}>
+                <img src={Logo} height="120px" width="120px" id="logo" />
+
+                <Search>
+                    <SearchIconStyled>
+                            <SearchIcon />
+                    </SearchIconStyled>
+                    <InputBaseStyled
+                    placeholder="Pesquisar…"
+                    inputProps={{ 'aria-label': 'search' }}
+                    />
+                </Search>
+
+                <IconButton href={item}>
+                    <ShoppingCartIcon sx={{ fontSize: 30, color: '#f7f7f7' }} />
+                </IconButton>
+            </Toolbar>
+
+            <Toolbar sx={{backgroundColor: '#a18fcf'}}>
+                <Box sx={{marginLeft: '20%', marginRight: '20%'}}>
+                    <ButtonStyled id="servicos-button" href="/">
+                        Home
+                    </ButtonStyled>
+                   
+                    <ButtonStyled id="itens-button" href="/itens">
+                        Itens
+                    </ButtonStyled>
+
+                    <ButtonStyled id="servicos-button" href="/agendamento">
+                        Serviços
+                    </ButtonStyled>
+
+                    <ButtonStyled id="sobrenos-button" href="/sobre">
+                        Sobre nós
+                    </ButtonStyled>
+                </Box>
+            </Toolbar>
+        </AppBar>
+    </Box>
+  );
+}

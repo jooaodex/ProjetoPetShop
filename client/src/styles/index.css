@@ -1,3 +1,26 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+*{
+  margin: 0;
+}
+
 body{
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,7 +41,7 @@ body{
   width: 100%;
 }
 
-.topoAg, h1, h2{
+.topoAg{
   text-align: center;
   color: rgb(254, 115, 0);
 }
@@ -38,17 +61,6 @@ body{
 }
 
 
-#logo{
-  padding-top: 15px;
-  padding-right: 900px;
-}
-
-nav {
-  display: flex;
-  height:8vh;
-  font-family: Arial, Helvetica, sans-serif;
-  justify-content: space-between;
-}
 
 .nav-list{
   list-style: none;

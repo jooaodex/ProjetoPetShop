@@ -2,11 +2,13 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import api from '../api.js'
 import { useState, useEffect } from "react";
+import Header from '../Components/Header.jsx';
 
 function Agendamento() {
 
   return (
     <div className='agendamento'>
+      <Header />
       <div className='divtopo'>
         <h1>Banho e Tosa</h1>
         <h2>Faça o agendamento para o banho e tosa do seu pet aqui</h2>
