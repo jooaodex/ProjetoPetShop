@@ -47,11 +47,25 @@ app.get('/admin', function(req,res){
         if(erro){
             throw erro;
         }
-        res.json([{
-            itens: resultadoItens
-        }])
+        db.query(`SELECT idPedido, cpfCliente, idProduto, quantidadeProduto, DATE_FORMAT(dataPedido, '%d-%m-%Y') as 'data' FROM petshop.pedidos`, function(erro,resultadoPedidos){
+            if(erro){
+                throw erro;
+            }
+            db.query(`SELECT * FROM petshop.agendamentos`, function(erro,resultadoAgendamentos){
+                if(erro){
+                    throw erro;
+                }
+                res.json([{
+                    itens: resultadoItens,
+                    pedidos: resultadoPedidos,
+                    agendamentos: resultadoAgendamentos
+                }])
+            })
+        })
+        
     })
 })
+
 
 app.post("/admin/insertItem", function(req,res){
     db.query(`INSERT INTO petshop.itens(nomeItem, imgUrl, precoItem, descricaoItem) VALUES (?,?,?,?)`,
@@ -60,6 +74,29 @@ app.post("/admin/insertItem", function(req,res){
             res.status(200).send('Erro: ' + erro)
         }
     })
+})
+
+app.post("/admin/editItem", function(req,res){
+    let itemId = req.body.itemId
+    let nome = req.body.nome
+    let img = req.body.img
+    let preco = req.body.preco
+    let desc = req.body.desc
+    db.query(`UPDATE petshop.itens
+    SET nomeItem = "`+nome+`",
+    imgUrl = "`+img+`",
+    precoItem = "`+preco+`",
+    descricaoItem = "`+desc+`"
+    WHERE idItem = "`+itemId+`"`, function(erro){
+        if(erro){
+            res.status(200).send('Erro: ' + erro)
+        }
+    })
+})
+
+app.post("/admin/deleteItem", function(req,res){
+    let itemId = req.body.itemId
+    db.query(`DELETE FROM petshop.itens WHERE idItem="`+itemId+`"`)
 })
 
 // ficar abaixo de tudo

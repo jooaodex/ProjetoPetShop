@@ -1,7 +1,9 @@
 /* admin login */
+/* admin login */
+/* admin login */
 
 .admin-main-div{
-    margin: 15vh 20vh;
+    margin: 8vh 20vh;
     text-align: center;
 }
 
@@ -39,7 +41,9 @@
 
 
 
-/* admin produtos */
+/* crud produtos */
+/* crud produtos */
+/* crud produtos */
 
 .admin-header{
     display: flex;
@@ -58,6 +62,11 @@
     padding: 10px 10px;
     margin-right: 5px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-item:hover{
+    background-color: rgb(235, 235, 235);
 }
 
 .delete-item{
@@ -66,6 +75,11 @@
     color: red;
     padding: 10px 10px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-item:hover{
+    background-color: rgb(255, 227, 227);
 }
 
 .insert-new-modal{
@@ -90,6 +104,7 @@
     display: inline-block;
     margin: 6px 0 5vh 0;
     font-size: 28px;
+    padding-left: 35px;
 }
 
 .close-insert-new-modal{
@@ -136,8 +151,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(206, 206, 206);
     padding-bottom: 10px;
+    font-size: 16px;
+    color: rgb(36, 36, 36);
 }
 
 .crud-id{
@@ -170,4 +187,107 @@
 
 .edit-item-p{
     margin: 0;
+}
+
+.admin-product-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(254, 115, 0);
+}
+
+.admin-product-create-button{
+    font-size: 18px;
+    background-color: rgb(254, 115, 0);
+    padding: 10px 15px;
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.header-crud > div {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.edit-modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.mr-20{
+    margin-right: 20px;
+}
+
+.delete-product{
+    display: inline-block;
+    margin: 6px 0 5vh 0;
+    font-size: 28px;
+}
+
+.delete-product-name{
+    display: inline-block;
+    margin: 6px 0 5vh 0;
+    font-size: 20px;
+}
+
+.admin-select-div{
+    margin-top: 20px;
+}
+
+.admin-select{
+    display: inline-block;
+    border: 2px solid rgb(254, 115, 0);
+    border-radius: 5px;
+    margin-right: 20px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.admin-select:hover{
+    background-color: rgb(255, 244, 238);
+}
+
+.admin-select > p {
+    margin: 0;
+    padding: 15px 20px;
+}
+
+
+/* table pedidos */
+/* table pedidos */
+/* table pedidos */
+
+
+.crud-id-orders{
+    width: 10%;
+}
+
+.crud-cpf-orders{
+    width: 20%;
+}
+
+.crud-nameProduct-orders{
+    width: 30%;
+}
+
+.crud-product-orders{
+    width: 10%;
+}
+
+.crud-qnt-orders{
+    width: 10%;
+}
+
+.crud-date-orders{
+    width: 20%;
 }
