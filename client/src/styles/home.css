@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
+.full-content{
+    height: 100vh;
+    padding: 3vh 10vw;
+    align-content: center;
+    align-text: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: rgb(218,151,0);
+    background: linear-gradient(30deg, rgba(258,151,0,1) 0%, rgba(255,208,24,1) 52%);
+}
+
+/*SLIDER SLIDER*/
+.content-slider{
+    height: 520px;
+
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 6px 6px 3px rgba(0,0,0,0.6);
+}
+
+.navigator-slide{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.lbl-slide{
+     width: 70px;
+     height: 17px;
+     border: 2.5px solid white;
+     margin: 6px;
+     border-radius: 9px;
+     cursor: pointer;
+     transition: .1s;
+     z-index: 5;
+}.lbl-slide:hover{
+    background: white;
+}
+
+.input-slider{
+    display: none;
+}
+
+.slider-img{
+    display: flex;
+    width: 600%;
+    height: 100%;
+}
+
+.slide-img{
+    width: 20%;
+    transition: .5s;
+}
+
+#slide-1:checked ~ .s1{
+margin-left: 0%;
+}
+
+#slide-2:checked ~ .s1{
+    margin-left: -20%;
+}
+
+#slide-3:checked ~ .s1{
+    margin-left: -40%;
+}
+
+#slide-4:checked ~ .s1{
+    margin-left: -60%;
+}
+
+#slide-5:checked ~ .s1{
+    margin-left: -80%;
+}
+
+#slide-6:checked ~ .s1{
+    margin-left: -100%;
+}
+/*SLIDER SLIDER*/
+
+/**/
+.content-inicio{
+    width: 100%;
+    margin-top: 3vh;
+}
+
+.content-inicio > ul{
+    display: grid;
+    grid-template-areas: "p s t q";
+    display-template-columns: 10px 10px 10px 10px;
+    list-style: none;
+    padding: 10px;
+    }
+
+.li-1{
+    grid-area: p;
+}
+
+.li-2{
+    grid-area: s;
+}
+
+.li-3{
+    grid-area: t;
+}
+
+.li-4{
+    grid-area: q;
+}
+
+.li-inicio{
+    border-radius: 9px;
+    padding: 10px;
+    margin: 3px;
+    background: rgb(255,229,129);
+    background: linear-gradient(90deg, rgba(255,229,129,1) 0%, rgba(255,186,29,1) 100%);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+}
+
+.li-inicio > p{
+    color: black;
+}
+/**/
