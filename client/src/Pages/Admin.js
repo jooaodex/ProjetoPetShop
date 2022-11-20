@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import api from '../api.js'
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import HomeIcon from '@mui/icons-material/Home';
 
 function Admin() {
 
@@ -172,131 +173,145 @@ function Admin() {
 
     if (login === 'true' && page == null) return (
         <div className="admin-main-div">
-            <button onClick={() => deslogar()}>Deslogar</button>
-
-            <div className="admin-select-div">
-                <div onClick={() => changeProducts()} className="admin-select-products admin-select">
-                    <p>Produtos</p>
-                </div>
-                <div onClick={() => changeOrders()} className="admin-select-orders admin-select">
-                    <p>Pedidos</p>
-                </div>
-                <div onClick={() => changeSchedules()} className="admin-select-schedules admin-select">
-                    <p>Agendamentos</p>
-                </div>
-            </div>
-
-            <div className="admin-header">
-                <span className="admin-product-title">Produtos</span>
-                <button className="admin-product-create-button" onClick={() => OpenCreateModal()}>Criar</button>
-            </div>
-            <div className="admin-crud-container">
-                <div className="admin-table">
-                    <div className="header-crud">
-                        <div className="crud-id crud-line">id</div>
-                        <div className="crud-img crud-line">Imagem</div>
-                        <div className="crud-name crud-line">Nome</div>
-                        <div className="crud-desc crud-line">Descrição</div>
-                        <div className="crud-price crud-line">Preço</div>
-                        <div className="crud-act crud-line">Ações</div>
+            <div className="admin-login-header">
+                <div  className="admin-return-home">
+                    <div onClick={() => navigate('/')} className="home-icon-div">
+                        <HomeIcon sx={{ fontSize: 40, color: 'white' }} />
                     </div>
-                    {
-                        parametros.map((item, i) => (
-                            <div key={i} className='item-crud'>
-                                <div className="crud-id crud-line">{item.idItem}</div>
-                                <div className="crud-img crud-line"><img src={item.imgUrl} width='60px'></img></div>
-                                <div className="crud-name crud-line">{item.nomeItem}</div>
-                                <div className="crud-desc crud-line">{item.descricaoItem}</div>
-                                <div className="crud-price crud-line">R${item.precoItem}</div>
-                                <div className="crud-act crud-line">
-                                    <div className="edit-item" onClick={() => openEditModal(item)}><p className="edit-item-p">Edit</p></div>
-                                    <div className="delete-item" onClick={() => openDeleteModal(item)}><p className="edit-item-p">Del</p></div>
+                </div>
+                <div className="">
+                    <div onClick={() => changeProducts()} className="admin-select-products admin-select">
+                        <p>Produtos</p>
+                    </div>
+                    <div onClick={() => changeOrders()} className="admin-select-orders admin-select">
+                        <p>Pedidos</p>
+                    </div>
+                    <div onClick={() => changeSchedules()} className="admin-select-schedules admin-select">
+                        <p>Agendamentos</p>
+                    </div>
+                </div>
+
+                <div className="admin-logout">
+                    <button className="admin-logout-button" onClick={() => deslogar()}>Deslogar</button>
+                </div>
+            </div>
+
+
+            <div className="admin-paper">
+                <div className="admin-header">
+                    <span className="admin-product-title">Produtos</span>
+                    <button className="admin-product-create-button" onClick={() => OpenCreateModal()}>Criar</button>
+                </div>
+                <div className="admin-crud-container">
+                    <div className="admin-table">
+                        <div className="header-crud">
+                            <div className="crud-id crud-line">id</div>
+                            <div className="crud-img crud-line">Imagem</div>
+                            <div className="crud-name crud-line">Nome</div>
+                            <div className="crud-desc crud-line">Descrição</div>
+                            <div className="crud-price crud-line">Preço</div>
+                            <div className="crud-act crud-line">Ações</div>
+                        </div>
+                        {
+                            parametros.map((item, i) => (
+                                <div key={i} className='item-crud'>
+                                    <div className="crud-id crud-line">{item.idItem}</div>
+                                    <div className="crud-img crud-line"><img src={item.imgUrl} width='60px'></img></div>
+                                    <div className="crud-name crud-line">{item.nomeItem}</div>
+                                    <div className="crud-desc crud-line">{item.descricaoItem}</div>
+                                    <div className="crud-price crud-line">R${item.precoItem}</div>
+                                    <div className="crud-act crud-line">
+                                        <div className="edit-item" onClick={() => openEditModal(item)}><p className="edit-item-p">Edit</p></div>
+                                        <div className="delete-item" onClick={() => openDeleteModal(item)}><p className="edit-item-p">Del</p></div>
+                                    </div>
                                 </div>
+                            ))
+                        }
+
+
+                    </div>
+
+                    <div id="new-modal" className="insert-new-modal">
+                        <div className="new-modal-container">
+                            <div className="insert-new-modal-top">
+                                <p className="create-new-product">Criar novo produto</p>
+                                <span className="close-insert-new-modal" onClick={() => closeCreateModal()}>X</span>
                             </div>
-                        ))
-                    }
 
+                            <div>
 
-                </div>
+                                <label>Nome do produto</label>
+                                <br></br>
+                                <input onChange={e => setItemInsertState({ ...itemInsertState, nome: e.target.value })} type='text' required name="nomeProd" id="nomeProd" className="input-new-modal"></input>
+                                <br></br>
+                                <label>URL da imagem</label>
+                                <br></br>
+                                <input onChange={e => setItemInsertState({ ...itemInsertState, img: e.target.value })} type='text' required name="imgProd" id="imgProd" className="input-new-modal"></input>
+                                <br></br>
+                                <label>Descrição</label>
+                                <br></br>
+                                <input onChange={e => setItemInsertState({ ...itemInsertState, desc: e.target.value })} type='text' required name="descProd" id="descProd" className="input-new-modal"></input>
+                                <br></br>
+                                <label>Preço</label>
+                                <br></br>
+                                <input onChange={e => setItemInsertState({ ...itemInsertState, preco: e.target.value })} type='text' required name="precoProd" id="precoProd" className="input-new-modal"></input>
+                                <br></br>
+                                <button onClick={() => insertItem()} className="admin-product-create-button">Criar</button>
 
-                <div id="new-modal" className="insert-new-modal">
-                    <div className="new-modal-container">
-                        <div className="insert-new-modal-top">
-                            <p className="create-new-product">Criar novo produto</p>
-                            <span className="close-insert-new-modal" onClick={() => closeCreateModal()}>X</span>
-                        </div>
-
-                        <div>
-
-                            <label>Nome do produto</label>
-                            <br></br>
-                            <input onChange={e => setItemInsertState({ ...itemInsertState, nome: e.target.value })} type='text' required name="nomeProd" id="nomeProd" className="input-new-modal"></input>
-                            <br></br>
-                            <label>URL da imagem</label>
-                            <br></br>
-                            <input onChange={e => setItemInsertState({ ...itemInsertState, img: e.target.value })} type='text' required name="imgProd" id="imgProd" className="input-new-modal"></input>
-                            <br></br>
-                            <label>Descrição</label>
-                            <br></br>
-                            <input onChange={e => setItemInsertState({ ...itemInsertState, desc: e.target.value })} type='text' required name="descProd" id="descProd" className="input-new-modal"></input>
-                            <br></br>
-                            <label>Preço</label>
-                            <br></br>
-                            <input onChange={e => setItemInsertState({ ...itemInsertState, preco: e.target.value })} type='text' required name="precoProd" id="precoProd" className="input-new-modal"></input>
-                            <br></br>
-                            <button onClick={() => insertItem()} className="input-new-modal">Criar</button>
-
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="edit-modal" className="edit-modal">
-                    <div className="new-modal-container">
-                        <div className="insert-new-modal-top">
-                            <p className="create-new-product">Editar produto</p>
-                            <span className="close-insert-new-modal" onClick={() => closeEditModal()}>X</span>
-                        </div>
+                    <div id="edit-modal" className="edit-modal">
+                        <div className="new-modal-container">
+                            <div className="insert-new-modal-top">
+                                <p className="create-new-product">Editar produto</p>
+                                <span className="close-insert-new-modal" onClick={() => closeEditModal()}>X</span>
+                            </div>
 
-                        <div>
+                            <div>
 
-                            <label>Nome do produto</label>
-                            <br></br>
-                            <input onChange={e => setItemEditState({ ...itemEditState, nome: e.target.value })} type='text' required name="nomeProd" id="nomeProdEdit" className="input-new-modal"></input>
-                            <br></br>
-                            <label>URL da imagem</label>
-                            <br></br>
-                            <input onChange={e => setItemEditState({ ...itemEditState, img: e.target.value })} type='text' required name="imgProd" id="imgProdEdit" className="input-new-modal"></input>
-                            <br></br>
-                            <label>Descrição</label>
-                            <br></br>
-                            <input onChange={e => setItemEditState({ ...itemEditState, desc: e.target.value })} type='text' required name="descProd" id="descProdEdit" className="input-new-modal"></input>
-                            <br></br>
-                            <label>Preço</label>
-                            <br></br>
-                            <input onChange={e => setItemEditState({ ...itemEditState, preco: e.target.value })} type='text' required name="precoProd" id="precoProdEdit" className="input-new-modal"></input>
-                            <br></br>
-                            <button onClick={() => editItem()} className="input-new-modal">Editar</button>
+                                <label>Nome do produto</label>
+                                <br></br>
+                                <input onChange={e => setItemEditState({ ...itemEditState, nome: e.target.value })} type='text' required name="nomeProd" id="nomeProdEdit" className="input-new-modal"></input>
+                                <br></br>
+                                <label>URL da imagem</label>
+                                <br></br>
+                                <input onChange={e => setItemEditState({ ...itemEditState, img: e.target.value })} type='text' required name="imgProd" id="imgProdEdit" className="input-new-modal"></input>
+                                <br></br>
+                                <label>Descrição</label>
+                                <br></br>
+                                <input onChange={e => setItemEditState({ ...itemEditState, desc: e.target.value })} type='text' required name="descProd" id="descProdEdit" className="input-new-modal"></input>
+                                <br></br>
+                                <label>Preço</label>
+                                <br></br>
+                                <input onChange={e => setItemEditState({ ...itemEditState, preco: e.target.value })} type='text' required name="precoProd" id="precoProdEdit" className="input-new-modal"></input>
+                                <br></br>
+                                <button onClick={() => editItem()} className="admin-product-create-button">Editar</button>
 
-                        </div>
-                    </div>
-                </div>
-
-                <div id="delete-modal" className="edit-modal">
-                    <div className="new-modal-container">
-                        <div className="insert-new-modal-top">
-                            <p className="delete-product">Deseja mesmo excluir este produto?</p>
-                            <p id="product-delete-name" className="delete-product-name"></p>
-                        </div>
-
-                        <div>
-                            <button onClick={() => deleteItem()} className="input-new-modal mr-20">Sim</button>
-                            <button onClick={() => closeDeleteModal()} className="input-new-modal">Não</button>
+                            </div>
                         </div>
                     </div>
+
+                    <div id="delete-modal" className="edit-modal">
+                        <div className="new-modal-container">
+                            <div className="insert-new-modal-top">
+                                <p className="delete-product">Deseja mesmo excluir este produto?</p>
+                                <p id="product-delete-name" className="delete-product-name"></p>
+                            </div>
+
+                            <div>
+                                <button onClick={() => deleteItem()} className="admin-product-create-button mr-20">Sim</button>
+                                <button onClick={() => closeDeleteModal()} className="admin-product-create-button">Não</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-
-
             </div>
+
+
 
             <div>
 
@@ -307,114 +322,145 @@ function Admin() {
 
     if (login === 'true' && page == 'orders') return (
         <div className="admin-main-div">
-            <button onClick={() => deslogar()}>Deslogar</button>
+            <div className="admin-login-header">
+                <div className="admin-return-home">
+                    <div className="home-icon-div">
+                        <HomeIcon sx={{ fontSize: 40, color: 'white' }} />
+                    </div>
+                </div>
+                <div className="">
+                    <div onClick={() => changeProducts()} className="admin-select-products admin-select">
+                        <p>Produtos</p>
+                    </div>
+                    <div onClick={() => changeOrders()} className="admin-select-orders admin-select">
+                        <p>Pedidos</p>
+                    </div>
+                    <div onClick={() => changeSchedules()} className="admin-select-schedules admin-select">
+                        <p>Agendamentos</p>
+                    </div>
+                </div>
 
-            <div className="admin-select-div">
-                <div onClick={() => changeProducts()} className="admin-select-products admin-select">
-                    <p>Produtos</p>
-                </div>
-                <div onClick={() => changeOrders()} className="admin-select-orders admin-select">
-                    <p>Pedidos</p>
-                </div>
-                <div onClick={() => changeSchedules()} className="admin-select-schedules admin-select">
-                    <p>Agendamentos</p>
+                <div className="admin-logout">
+                    <button className="admin-logout-button" onClick={() => deslogar()}>Deslogar</button>
                 </div>
             </div>
 
-            <div className="admin-header">
-                <span className="admin-product-title">Pedidos</span>
-            </div>
+            <div className="admin-paper">
+                <div className="admin-header">
+                    <span className="admin-product-title">Pedidos</span>
+                </div>
 
-            <div className="admin-orders-container">
-                <div className="admin-table">
-                    <div className="header-crud">
-                        <div className="crud-id-orders crud-line">id</div>
-                        <div className="crud-cpf-orders crud-line">cpfCliente</div>
-                        <div className="crud-nameProduct-orders crud-line">nomeProduto</div>
-                        <div className="crud-product-orders crud-line">idProduto</div>
-                        <div className="crud-qnt-orders crud-line">Quantidade</div>
-                        <div className="crud-date-orders crud-line">Data</div>
+                <div className="admin-orders-container">
+                    <div className="admin-table">
+                        <div className="header-crud">
+                            <div className="crud-id-orders crud-line">id</div>
+                            <div className="crud-cpf-orders crud-line">cpfCliente</div>
+                            <div className="crud-nameProduct-orders crud-line">nomeProduto</div>
+                            <div className="crud-product-orders crud-line">idProduto</div>
+                            <div className="crud-qnt-orders crud-line">Quantidade</div>
+                            <div className="crud-date-orders crud-line">Data</div>
+                        </div>
+
+                        {
+                            parametrosPedidos.map((item, i) => (
+                                <div key={i} className='item-crud'>
+                                    <div className="crud-id-orders crud-line">{item.idPedido}</div>
+                                    <div className="crud-cpf-orders crud-line">{item.cpfCliente}</div>
+                                    <div className="crud-nameProduct-orders crud-line">{item.nomeProduto}</div>
+                                    <div className="crud-product-orders crud-line">{item.idProduto}</div>
+                                    <div className="crud-qnt-orders crud-line">{item.quantidadeProduto}</div>
+                                    <div className="crud-date-orders crud-line">{item.data}</div>
+                                </div>
+                            ))
+                        }
                     </div>
 
-                    {
-                        parametrosPedidos.map((item, i) => (
-                            <div key={i} className='item-crud'>
-                                <div className="crud-id-orders crud-line">{item.idPedido}</div>
-                                <div className="crud-cpf-orders crud-line">{item.cpfCliente}</div>
-                                <div className="crud-nameProduct-orders crud-line">{item.nomeProduto}</div>
-                                <div className="crud-product-orders crud-line">{item.idProduto}</div>
-                                <div className="crud-qnt-orders crud-line">{item.quantidadeProduto}</div>
-                                <div className="crud-date-orders crud-line">{item.data}</div>
-                            </div>
-                        ))
-                    }
                 </div>
-
             </div>
-
         </div>
     )
 
     if (login === 'true' && page == 'schedules') return (
         <div className="admin-main-div">
-            <button onClick={() => deslogar()}>Deslogar</button>
-
-            <div className="admin-select-div">
-                <div onClick={() => changeProducts()} className="admin-select-products admin-select">
-                    <p>Produtos</p>
-                </div>
-                <div onClick={() => changeOrders()} className="admin-select-orders admin-select">
-                    <p>Pedidos</p>
-                </div>
-                <div onClick={() => changeSchedules()} className="admin-select-schedules admin-select">
-                    <p>Agendamentos</p>
-                </div>
-            </div>
-
-            <div className="admin-header">
-                <span className="admin-product-title">Agendamentos</span>
-            </div>
-
-            <div className="admin-schedules-container">
-
-                <div className="admin-table">
-                    <div className="header-crud">
-                        <div className="crud-id-schedules crud-line">id</div>
-                        <div className="crud-nome-schedules crud-line">nomeCliente</div>
-                        <div className="crud-cpf-schedules crud-line">cpfCliente</div>
-                        <div className="crud-tipo-schedules crud-line">tipo</div>
-                        <div className="crud-data-schedules crud-line">Data</div>
-                        <div className="crud-specie-schedules crud-line">Espécie</div>
-                        <div className="crud-animal-schedules crud-line">NomeAnimal</div>
+            <div className="admin-login-header">
+                <div className="admin-return-home">
+                    <div className="home-icon-div">
+                        <HomeIcon sx={{ fontSize: 40, color: 'white' }} />
                     </div>
+                </div>
+                <div className="">
+                    <div onClick={() => changeProducts()} className="admin-select-products admin-select">
+                        <p>Produtos</p>
+                    </div>
+                    <div onClick={() => changeOrders()} className="admin-select-orders admin-select">
+                        <p>Pedidos</p>
+                    </div>
+                    <div onClick={() => changeSchedules()} className="admin-select-schedules admin-select">
+                        <p>Agendamentos</p>
+                    </div>
+                </div>
 
-                    {
-                        parametrosAgendamentos.map((item, i) => (
-                            <div key={i} className='item-crud'>
-                                <div className="crud-id-schedules crud-line">{item.idAgendamento}</div>
-                                <div className="crud-nome-schedules crud-line">{item.nomeCliente}</div>
-                                <div className="crud-cpf-schedules crud-line">{item.cpfCliente}</div>
-                                <div className="crud-tipo-schedules crud-line">{item.tipoAgendamento}</div>
-                                <div className="crud-data-schedules crud-line">{item.dataAgendamento}</div>
-                                <div className="crud-specie-schedules crud-line">{item.especieAnimal}</div>
-                                <div className="crud-animal-schedules crud-line">{item.nomeAnimal}</div>
-                            </div>
-                        ))
-                    }
+                <div className="admin-logout">
+                    <button className="admin-logout-button" onClick={() => deslogar()}>Deslogar</button>
                 </div>
             </div>
+
+
+            <div className="admin-paper">
+                <div className="admin-header">
+                    <span className="admin-product-title">Agendamentos</span>
+                </div>
+
+                <div className="admin-schedules-container">
+
+                    <div className="admin-table">
+                        <div className="header-crud">
+                            <div className="crud-id-schedules crud-line">id</div>
+                            <div className="crud-nome-schedules crud-line">nomeCliente</div>
+                            <div className="crud-cpf-schedules crud-line">cpfCliente</div>
+                            <div className="crud-tipo-schedules crud-line">tipo</div>
+                            <div className="crud-data-schedules crud-line">Data</div>
+                            <div className="crud-specie-schedules crud-line">Espécie</div>
+                            <div className="crud-animal-schedules crud-line">NomeAnimal</div>
+                        </div>
+
+                        {
+                            parametrosAgendamentos.map((item, i) => (
+                                <div key={i} className='item-crud'>
+                                    <div className="crud-id-schedules crud-line">{item.idAgendamento}</div>
+                                    <div className="crud-nome-schedules crud-line">{item.nomeCliente}</div>
+                                    <div className="crud-cpf-schedules crud-line">{item.cpfCliente}</div>
+                                    <div className="crud-tipo-schedules crud-line">{item.tipoAgendamento}</div>
+                                    <div className="crud-data-schedules crud-line">{item.dataAgendamento}</div>
+                                    <div className="crud-specie-schedules crud-line">{item.especieAnimal}</div>
+                                    <div className="crud-animal-schedules crud-line">{item.nomeAnimal}</div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
     )
 
     return (
         <div className="admin-main-div">
-            <h1>Login Admin</h1>
+
+            <h1 className="mt-20">Login Admin</h1>
             <div className="admin-form" method='get'>
                 <input type="text" id="adminUser" placeholder="Usuário" className="admin-user-input" required name="user"></input>
                 <br></br>
                 <input type="password" id="adminPass" placeholder="Senha" className="admin-password-input" required name="password"></input>
                 <br></br>
-                <button id="adminButton" onClick={() => loginForm()}>Entrar</button>
+
+                <div className="divAdminButtons">
+                    <button id="adminButton" className="adminButton" onClick={() => loginForm()}>Entrar</button>
+                    <button className="adminButton" onClick={() => navigate('/')}>Sair</button>
+                </div>
+                
             </div>
 
         </div>

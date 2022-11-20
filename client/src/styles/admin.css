@@ -2,8 +2,12 @@
 /* admin login */
 /* admin login */
 
+.mt-20{
+    margin-top: 20vh;
+}
+
 .admin-main-div{
-    margin: 8vh 20vh;
+    margin: 3vh 20vh;
     text-align: center;
 }
 
@@ -28,7 +32,7 @@
     border-radius: 3px;
 }
 
-#adminButton{
+.adminButton{
     color: white;
     margin-top: 2vh;
     width: 333px;
@@ -37,9 +41,58 @@
     background-color: rgb(254, 115, 0);
     border-width: 0px;
     border-radius: 3px;
+    display: block;
 }
 
+.divAdminButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.admin-login-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-return-home{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.admin-logout{
+    display: inline-block;
+}
+
+.admin-logout-button{
+    border-width: 0;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: rgb(254, 115, 0);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.home-icon-div{
+    border: 2px solid rgb(254, 115, 0);
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0 3px;
+    background-color: rgb(254, 115, 0);
+}
+
+.admin-paper{
+    background-color: #f2f2f2;
+    margin-top: 2vh;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 2px solid;
+    border-color: rgb(254, 115, 0);
+}
 
 /* crud produtos */
 /* crud produtos */
@@ -109,35 +162,39 @@
 
 .close-insert-new-modal{
     float: right;
-    font-size: 30px;
+    font-size: 18px;
+    background-color: rgb(254, 115, 0);
+    padding: 10px 15px;
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    border: 2px solid white;
-    border-radius: 12px;
-    padding: 2px 9px;
-    background-color: white;
-    color: rgb(255, 115, 0);
+    transition: 0.3s;
 }
 
 .close-insert-new-modal:hover{
-    color: black;
+    background-color: rgb(255, 158, 79);
 }
 
 .new-modal-container{
     width: 50vh;
     margin-bottom: 20vh;
-    background-color: rgb(255, 115, 0);
+    background-color: #f2f2f2;
     padding: 5vh;
-    color: white;
+    color: black;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: rgb(255, 115, 0);
 }
 
 .input-new-modal{
     margin-top: 3px;
     margin-bottom: 20px;
-    border: white 1px solid;
-    border-radius: 2px;
+    border: white 2px solid;
+    border-radius: 3px;
+    border-color: rgb(255, 115, 0);
     font-size: 18px;
 }
-
 .header-crud{
     min-width: 100%;
     width: 100%;
@@ -203,6 +260,11 @@
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.admin-product-create-button:hover{
+    background-color: rgb(255, 158, 79)
 }
 
 .header-crud > div {

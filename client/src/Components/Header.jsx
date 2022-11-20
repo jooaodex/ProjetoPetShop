@@ -69,7 +69,6 @@ const ButtonStyled = styled(Button)({
 
 export default function Header() {
     const navigate = useNavigate();
-    const item = "/item?id=1"
     const [formInput, updateFormInput] = useState({search: '' })
 
 
@@ -79,7 +78,7 @@ export default function Header() {
     }
 
     return (
-        <Box sx={{ flexGrow: 1, top: 0, position: 'sticky' }}>
+        <Box sx={{ flexGrow: 1, top: 0, position: 'sticky', zIndex: 5000 }}>
             <AppBar sx={{ backgroundColor: '#AA96DA', top: 0, position: 'sticky' }}>
                 <Toolbar sx={{ marginLeft: '20%', marginRight: '20%' }}>
                     <img src={Logo} height="120px" width="120px" id="logo" />
@@ -99,7 +98,7 @@ export default function Header() {
                     </Search>
                 
 
-                    <IconButton href={item}>
+                    <IconButton>
                         <ShoppingCartIcon sx={{ fontSize: 30, color: '#f7f7f7' }} />
                     </IconButton>
                 </Toolbar>
