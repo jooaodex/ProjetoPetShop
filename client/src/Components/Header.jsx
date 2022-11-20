@@ -19,7 +19,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import api from '../api.js'
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -28,19 +28,19 @@ const Search = styled('div')(({ theme }) => ({
     borderRadius: '10px',
     backgroundColor: alpha('#f7f7f7', 0.15),
     '&:hover': {
-      backgroundColor: alpha('#f7f7f7', 0.25),
+        backgroundColor: alpha('#f7f7f7', 0.25),
     },
     marginLeft: 40,
     marginRight: 30,
     width: '100%',
-  }));
-  
+}));
+
 const InputBaseStyled = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      width: '90ch',
+        padding: theme.spacing(1, 1, 1, 0),
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        width: '90ch',
     },
 }));
 
@@ -53,7 +53,7 @@ const SearchIconStyled = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  }));
+}));
 
 const ButtonStyled = styled(Button)({
     fontSize: 18,
@@ -63,54 +63,76 @@ const ButtonStyled = styled(Button)({
     color: '#f7f7f7',
     '&:hover': {
         color: '#f7f7f7',
-        backgroundColor: '#c1aafa' ,
+        backgroundColor: '#c1aafa',
     }
 });
 
 export default function Header() {
+    const navigate = useNavigate();
     const item = "/item?id=1"
+    const [formInput, updateFormInput] = useState({search: '' })
 
-  return (
-    <Box sx={{ flexGrow: 1, top: 0, position: 'sticky'}}>
-        <AppBar sx={{ backgroundColor: '#AA96DA', top: 0, position: 'sticky' }}>
-            <Toolbar sx={{ marginLeft: '20%', marginRight: '20%'}}>
-                <img src={Logo} height="120px" width="120px" id="logo" />
 
-                <Search>
-                    <SearchIconStyled>
+    const SearchItem = (e) => {
+        e.preventDefault()
+        navigate('/itens?search=' + formInput.search)
+    }
+
+    return (
+        <Box sx={{ flexGrow: 1, top: 0, position: 'sticky' }}>
+            <AppBar sx={{ backgroundColor: '#AA96DA', top: 0, position: 'sticky' }}>
+                <Toolbar sx={{ marginLeft: '20%', marginRight: '20%' }}>
+                    <img src={Logo} height="120px" width="120px" id="logo" />
+                
+                    <Search>
+                        <SearchIconStyled>
                             <SearchIcon />
-                    </SearchIconStyled>
-                    <InputBaseStyled
-                    placeholder="Pesquisar…"
-                    inputProps={{ 'aria-label': 'search' }}
-                    />
-                </Search>
+                        </SearchIconStyled>
+                        <form onSubmit={SearchItem}>
+                            <InputBaseStyled
+                                placeholder="Pesquisar…"
+                                inputProps={{ 'aria-label': 'search' }}
+                                onChange={e => updateFormInput({...formInput, search: e.target.value})}
+                                type='text'
+                            />
+                        </form>
+                    </Search>
+                
 
-                <IconButton href={item}>
-                    <ShoppingCartIcon sx={{ fontSize: 30, color: '#f7f7f7' }} />
-                </IconButton>
-            </Toolbar>
+                    <IconButton href={item}>
+                        <ShoppingCartIcon sx={{ fontSize: 30, color: '#f7f7f7' }} />
+                    </IconButton>
+                </Toolbar>
 
-            <Toolbar sx={{backgroundColor: '#a18fcf'}}>
-                <Box sx={{marginLeft: '20%', marginRight: '20%'}}>
-                    <ButtonStyled id="servicos-button" href="/">
-                        Home
-                    </ButtonStyled>
-                   
-                    <ButtonStyled id="itens-button" href="/itens">
-                        Itens
-                    </ButtonStyled>
+                <Toolbar sx={{ backgroundColor: '#a18fcf' }}>
+                    <Box sx={{ marginLeft: '20%', marginRight: '20%' }} >
 
-                    <ButtonStyled id="servicos-button" href="/agendamento">
-                        Serviços
-                    </ButtonStyled>
+                        <Link to="/" style={{ textDecoration: 'none' }}>
+                            <ButtonStyled id="servicos-button">
+                                Home
+                            </ButtonStyled>
+                        </Link>
 
-                    <ButtonStyled id="sobrenos-button" href="/sobre">
-                        Sobre nós
-                    </ButtonStyled>
-                </Box>
-            </Toolbar>
-        </AppBar>
-    </Box>
-  );
+                        <Link to="/itens" style={{ textDecoration: 'none' }}>
+                            <ButtonStyled id="itens-button">
+                                Itens
+                            </ButtonStyled>
+                        </Link>
+                        
+                        <Link to="/agendamento" style={{ textDecoration: 'none' }}>
+                            <ButtonStyled id="servicos-button" >
+                                Serviços
+                            </ButtonStyled>
+                        </Link>
+
+                        <Link to="/sobre" style={{ textDecoration: 'none' }}>
+                            <ButtonStyled id="sobrenos-button">
+                                Sobre nós
+                            </ButtonStyled>
+                        </Link>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+        </Box>
+    );
 }

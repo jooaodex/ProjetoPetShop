@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import api from '../api.js'
 import { useLocation } from "react-router-dom";
 import Header from "../Components/Header.jsx";
+import { Link } from 'react-router-dom'
 
 function Itens() {
 
@@ -25,7 +26,7 @@ function Itens() {
                 setParametros(filter)
             }
         })
-    }, [])
+    }, [search])
 
     return (
         <div classname="base-projeto">
@@ -40,7 +41,7 @@ function Itens() {
                         {
                             parametros.map((item, i) => (
                                 <div key={i} className="items-item-container">
-                                    <a href={"item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
+                                    <Link to={"item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
                                         <div className="item-img-container">
                                             <div className="item-img-container-inner">
                                                 <img className="item-img" src={item.imgUrl}></img>
@@ -56,7 +57,7 @@ function Itens() {
                                                 <p className="item-price">R${item.precoItem}</p>
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             ))
                         }
