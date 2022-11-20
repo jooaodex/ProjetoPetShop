@@ -1,8 +1,4 @@
-body{
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 .divtopo{
   background-color:rgb(248, 239, 115);
@@ -18,7 +14,7 @@ body{
   width: 100%;
 }
 
-.topoAg, h1, h2{
+.topoAg > h1 > h2{
   text-align: center;
   color: rgb(254, 115, 0);
 }
@@ -89,36 +85,36 @@ nav {
   --cor-primaria : rgb(229, 0, 0);
 }
 
-.menubuttons ul{
+.menubuttons > ul{
   list-style-type: none;
   padding: 0;
 
 }
 
-.menubuttons ul li{
+.menubuttons > ul > li{
   display: inline;
   position: relative;
 }
 
-.menubuttons ul li a{
+.menubuttons > ul > li > a{
   color: var(--cor-primaria );
   text-decoration: none;
   padding: 10px;
   display: inline-block;
 }
 
-.menubuttons ul li a:hover{
+.menubuttons > ul > li > a:hover{
   background-color: var( --cor-hover)
 }
 
 /*sub menu*/
 
-.menubuttons ul ul{
+.menubuttons > ul > ul{
   display: none;
   position: absolute;
 }
 
-.menubuttons ul li:hover ul{
+.menubuttons > ul > li:hover > ul{
   display: block;
   position: absolute;
 }

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Calendar from 'react-calendar';
 import { useState } from "react";
-import 'react-calendar/dist/Calendar.css';
+//import 'react-calendar/dist/Calendar.css';
 
 function Calendar() {
 

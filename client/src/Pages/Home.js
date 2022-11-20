@@ -48,12 +48,12 @@ function Home() {
         <div class="content-slider">
           <div class="slider-img">
               {/* <!--Botões de troca--> */}
-              <input type="radio" name="radio" id="slide-1"/>
-              <input type="radio" name="radio" id="slide-2"/>
-              <input type="radio" name="radio" id="slide-3"/>
-              <input type="radio" name="radio" id="slide-4" checked/>
-              <input type="radio" name="radio" id="slide-5"/>
-              <input type="radio" name="radio" id="slide-6"/>
+              <input class="input-slider" type="radio" name="radio" id="slide-1"/>
+              <input class="input-slider" type="radio" name="radio" id="slide-2"/>
+              <input class="input-slider" type="radio" name="radio" id="slide-3"/>
+              <input class="input-slider" type="radio" name="radio" id="slide-4"/>
+              <input class="input-slider" type="radio" name="radio" id="slide-5"/>
+              <input class="input-slider" type="radio" name="radio" id="slide-6"/>
 
               {/* <!--imagens a serem trocadas--> */}
               <div class="slide-img s1">
@@ -85,8 +85,35 @@ function Home() {
                   <label class="lbl-slide" for="slide-6"></label>
               </div>
           </div>
+          
+          
       </div>
-      </div>
+      <div class="content-inicio">
+            <ul>
+
+              <li class="li-inicio li-1">
+                <h2>Resgate na loja</h2>
+                <a href=""><p>Ver Regras</p></a>
+              </li>
+
+              <li class="li-inicio li-2">
+                <h2>Frete Gratis</h2>
+                <a href=""><p>Ver Regras</p></a>
+              </li>
+
+              <li class="li-inicio li-3">
+                <h2>Qualidade dos produtos</h2>
+                <a href=""><p>Ver Regras</p></a>
+              </li>
+
+              <li class="li-inicio li-4">
+                <h2><b>Descontos</b></h2>
+                <a href=""><p>Ver Regras</p></a>
+              </li>
+
+            </ul>
+          </div>
+    </div>
   </div>
 
   );
