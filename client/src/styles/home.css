@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    font-family: 'Rubik Glitch', cursive;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
+.full-content{
+    padding: 3vh 10vw;
+    align-content: center;
+    align-text: center;
+    display: flex;
+    position: relative;
+}
+
+/*SLIDER SLIDER*/
+.content-slider{
+    height: 520px;
+
+    width: 75vw;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+
+.navigator-slide{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.lbl-slide{
+     width: 70px;
+     height: 17px;
+     border: 2px solid white;
+     margin: 6px;
+     border-radius: 9px;
+     cursor: pointer;
+     transition: .1s;
+}.lbl-slide:hover{
+    background: white;
+}
+
+input{
+    display: none;
+}
+
+.slider-img{
+    display: flex;
+    width: 600%;
+    height: 100%;
+}
+
+.slide-img{
+    width: 20%;
+    transition: .3s;
+}
+
+.slide-img img{
+
+}
+
+#slide-1:checked ~ .s1{
+margin-left: 0%;
+}
+
+#slide-2:checked ~ .s1{
+    margin-left: -20%;
+}
+
+#slide-3:checked ~ .s1{
+    margin-left: -40%;
+}
+
+#slide-4:checked ~ .s1{
+    margin-left: -60%;
+}
+
+#slide-5:checked ~ .s1{
+    margin-left: -80%;
+}
+
+#slide-6:checked ~ .s1{
+    margin-left: -100%;
+}
+/*SLIDER SLIDER*/

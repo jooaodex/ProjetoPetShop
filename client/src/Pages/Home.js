@@ -4,6 +4,7 @@ import Banner1 from './imgs/teste2.png'
 import carrinho from './imgs/carrinho-compra.png'
 import { Link } from 'react-router-dom'
 import Calendar from 'react-calendar';
+import '../styles/home.css';
 
 import api from '../api.js'
 
@@ -16,17 +17,10 @@ function Home() {
       <div className="divtopo">
         <header>
           <nav>
-            <div className="menu"></div>
-            <a href="/index.html">
-              <img src={Logo} height="120px" width="120px" id="logo" />
-            </a>
-            <a href="/#">
-              <img src={carrinho} height="50px" width="50px" id="carrinhoCompra" />
-            </a>
 
           </nav>
         </header>
-        <div className="menubuttons">
+        {/* <div className="menubuttons">
 
           <ul class="nav-list">
             <li><a href="/#" id="letter">Categorias</a>
@@ -47,20 +41,54 @@ function Home() {
           </ul>
 
 
-        </div>
+        </div> */}
 
       </div>
+      <div class="full-content">
+        <div class="content-slider">
+          <div class="slider-img">
+              {/* <!--Botões de troca--> */}
+              <input type="radio" name="radio" id="slide-1"/>
+              <input type="radio" name="radio" id="slide-2"/>
+              <input type="radio" name="radio" id="slide-3"/>
+              <input type="radio" name="radio" id="slide-4" checked/>
+              <input type="radio" name="radio" id="slide-5"/>
+              <input type="radio" name="radio" id="slide-6"/>
 
-      <div class="slideshow-container">
-        <div class="mySlidesfade" id="firstdiv">
-          <img src={Banner1} width="100%" id="banner" />
-        </div>
+              {/* <!--imagens a serem trocadas--> */}
+              <div class="slide-img s1">
+                  <img src={Banner1} alt="img1"/>
+              </div>
+              <div class="slide-img s2">
+                  <img src={Banner1} alt="img2"/>
+              </div>
+              <div class="slide-img s3">
+                  <img src={Banner1} alt="img3"/>
+              </div>
+              <div class="slide-img s4">
+                  <img src={Banner1} alt="img4"/>
+              </div>
+              <div class="slide-img s5">
+                  <img src={Banner1} alt="img5"/>
+              </div>
+              <div class="slide-img s6">
+                  <img src={Banner1} alt="img6"/>
+              </div>
 
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              {/* <!--botões de navegação--> */}
+              <div class="navigator-slide">
+                  <label class="lbl-slide" for="slide-1"></label>
+                  <label class="lbl-slide" for="slide-2"></label>
+                  <label class="lbl-slide" for="slide-3"></label>
+                  <label class="lbl-slide" for="slide-4"></label>
+                  <label class="lbl-slide" for="slide-5"></label>
+                  <label class="lbl-slide" for="slide-6"></label>
+              </div>
+          </div>
       </div>
+      </div>
+  </div>
 
-    </div>
   );
 }
 
