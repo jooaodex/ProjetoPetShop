@@ -25,12 +25,23 @@ app.get('/agendamento', (req,res) => {
 })
 
 app.get('/itens', function(req,res){
-    db.query(`SELECT * FROM dbCinema.filme WHERE filmeId="4"`, function(erro, resultadoFilme){
+    db.query(`SELECT * FROM petshop.itens`, function(erro, resultadoItens){
         if(erro){
             throw erro;
         }
         res.json([{
-            parametroFilme: resultadoFilme
+            itens: resultadoItens
+        }])
+    })
+})
+
+app.get('/item', function(req,res){
+    db.query(`SELECT * FROM petshop.itens`, function(erro, resultadoItem){
+        if(erro){
+            throw erro;
+        }
+        res.json([{
+            item: resultadoItem
         }])
     })
 })

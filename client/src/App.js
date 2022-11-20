@@ -7,6 +7,7 @@ import Agendamento from "./Pages/Agendamento"
 import Sobre from "./Pages/Sobre"
 import Itens from "./Pages/Itens"
 import Admin from "./Pages/Admin"
+import Item from "./Pages/Item"
 
 import api from './api.js'
 import axios from 'axios'
@@ -23,6 +24,7 @@ function App() {
               <Route path="/sobre" element={<Sobre />}></Route>
               <Route path="/itens" element={<Itens />}></Route>
               <Route path="/admin" element={<Admin />}></Route>
+              <Route path="/item" element={<Item />}></Route>
           </Routes>
         </Router>
 

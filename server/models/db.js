@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "12345",
-    database: "dbCinema",
+    database: "petshop",
     define: {
         "timestamps": false
     }
