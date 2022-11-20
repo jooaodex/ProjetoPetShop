@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import Logo from './imgs/logo.png'
 import Banner1 from './imgs/teste2.png'
+import imgCachorro from './imgs/imgCachorro.png'
+import imgGato from './imgs/imgGato.png'
+import imgTodos from './imgs/imgTodos.png'
 import carrinho from './imgs/carrinho-compra.png'
 import { Link } from 'react-router-dom'
 import Calendar from 'react-calendar';
@@ -141,11 +144,23 @@ function Home() {
     </div>
 </div>
 
+        <div class="content-filtros">
 
+          <div class="filtros-div">
+            <img src={imgCachorro}/>
+            <h3>Cachorro</h3>
+          </div>
+          <div class="filtros-div">
+            <img src={imgGato}/>
+            <h3>Gato</h3>
+          </div>
+          <div class="filtros-div">
+            <img src={imgTodos}/>
+            <h3>Todos</h3>
+          </div>
         </div>
 
-
-
+        </div>
 </div>
   );
 }

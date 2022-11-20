@@ -26,7 +26,7 @@
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    box-shadow: 6px 6px 3px rgba(0,0,0,0.6);
+    box-shadow: 6px 6px 3px rgba(0,0,0,0.3);
 }
 
 .navigator-slide{
@@ -126,7 +126,7 @@ margin-left: 0%;
     margin: 3px;
     background: rgb(171,150,219);
     background: linear-gradient(90deg, rgba(171,150,219,1) 0%, rgba(189,164,246,1) 50%, rgba(171,150,219,1) 100%);
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
 }
 
 .li-inicio > p{
@@ -141,3 +141,26 @@ margin-left: 0%;
     margin-top: 45px;
 }
 /*Produtos*/
+
+/*Filtros*/
+.content-filtros{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtros-div{
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtros-div > img{
+    min-width:180px;
+    max-width: 250px;
+    width: 50%;
+}
+/*Filtros*/
