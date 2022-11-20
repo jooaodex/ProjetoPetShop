@@ -375,6 +375,34 @@ function Admin() {
                 <span className="admin-product-title">Agendamentos</span>
             </div>
 
+            <div className="admin-schedules-container">
+
+                <div className="admin-table">
+                    <div className="header-crud">
+                        <div className="crud-id-schedules crud-line">id</div>
+                        <div className="crud-nome-schedules crud-line">nomeCliente</div>
+                        <div className="crud-cpf-schedules crud-line">cpfCliente</div>
+                        <div className="crud-tipo-schedules crud-line">tipo</div>
+                        <div className="crud-data-schedules crud-line">Data</div>
+                        <div className="crud-specie-schedules crud-line">Espécie</div>
+                        <div className="crud-animal-schedules crud-line">NomeAnimal</div>
+                    </div>
+
+                    {
+                        parametrosAgendamentos.map((item, i) => (
+                            <div key={i} className='item-crud'>
+                                <div className="crud-id-schedules crud-line">{item.idAgendamento}</div>
+                                <div className="crud-nome-schedules crud-line">{item.nomeCliente}</div>
+                                <div className="crud-cpf-schedules crud-line">{item.cpfCliente}</div>
+                                <div className="crud-tipo-schedules crud-line">{item.tipoAgendamento}</div>
+                                <div className="crud-data-schedules crud-line">{item.dataAgendamento}</div>
+                                <div className="crud-specie-schedules crud-line">{item.especieAnimal}</div>
+                                <div className="crud-animal-schedules crud-line">{item.nomeAnimal}</div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </div>
     )
 

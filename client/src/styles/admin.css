@@ -291,3 +291,36 @@
 .crud-date-orders{
     width: 20%;
 }
+
+
+/* table agendamento */
+/* table agendamento */
+/* table agendamento */
+
+.crud-id-schedules{
+    width: 10%;
+}
+
+.crud-nome-schedules{
+    width: 20%;
+}
+
+.crud-cpf-schedules{
+    width: 10%;
+}
+
+.crud-tipo-schedules{
+    width: 10%;
+}
+
+.crud-data-schedules{
+    width: 20%;
+}
+
+.crud-specie-schedules{
+    width: 10%;
+}
+
+.crud-animal-schedules{
+    width: 20%;
+}

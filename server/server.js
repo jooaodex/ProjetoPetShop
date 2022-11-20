@@ -66,6 +66,25 @@ app.get('/admin', function(req,res){
     })
 })
 
+app.post("/item/buyItem", function(req,res){
+    db.query(`INSERT INTO petshop.pedidos(cpfCliente, idProduto, quantidadeProduto, dataPedido) VALUES (?,?,?,?)`,
+    [req.body.cpfCliente, req.body.idProduto, req.body.quantidade, req.body.data], function(erro){
+        if(erro){
+            res.status(200).send('Erro: ' + erro) 
+        }
+    })
+})
+
+app.post("/agendamento/schedule", function(req,res){
+    db.query(`INSERT INTO petshop.agendamentos(nomeCliente, cpfCliente, tipoAgendamento, dataAgendamento, especieAnimal, nomeAnimal) VALUES (?,?,?,?,?,?)`,
+    [req.body.nomeCliente, req.body.cpfCliente, req.body.tipo, req.body.data, req.body.animal, req.body.nomeAnimal], function(erro){
+        if(erro){
+            res.status(200).send('Erro: ' + erro) 
+        }
+    })
+})
+
+
 
 app.post("/admin/insertItem", function(req,res){
     db.query(`INSERT INTO petshop.itens(nomeItem, imgUrl, precoItem, descricaoItem) VALUES (?,?,?,?)`,
