@@ -14,8 +14,8 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    background: rgb(218,151,0);
-    background: linear-gradient(30deg, rgba(258,151,0,1) 0%, rgba(255,208,24,1) 52%);
+    background: rgb(252,234,252);
+    background: linear-gradient(180deg, rgba(252,234,252,1) 0%, rgba(255,255,233,1) 100%);
 }
 
 /*SLIDER SLIDER*/
@@ -90,7 +90,7 @@ margin-left: 0%;
 }
 /*SLIDER SLIDER*/
 
-/**/
+/*Inicio*/
 .content-inicio{
     width: 100%;
     margin-top: 3vh;
@@ -124,12 +124,20 @@ margin-left: 0%;
     border-radius: 9px;
     padding: 10px;
     margin: 3px;
-    background: rgb(255,229,129);
-    background: linear-gradient(90deg, rgba(255,229,129,1) 0%, rgba(255,186,29,1) 100%);
+    background: rgb(171,150,219);
+    background: linear-gradient(90deg, rgba(171,150,219,1) 0%, rgba(189,164,246,1) 50%, rgba(171,150,219,1) 100%);
     box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
 }
 
 .li-inicio > p{
     color: black;
 }
-/**/
+/*Inicio*/
+
+
+/*Produtos*/
+.content-produtos{
+    width: 100%;
+    margin-top: 45px;
+}
+/*Produtos*/
