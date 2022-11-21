@@ -38,6 +38,15 @@ function Home() {
       })
   }, [])
 
+  var sobreMais = document.querySelector('div.content-sobre-home-mais');
+  var botao = document.querySelector('button#sobre-button');
+  botao.addEventListener('click', function() {
+    var verMais = sobreMais.ClassList.contains('content-sobre-home-menos');
+    sobreMais.classList.toggle('content-sobre-home-menos');
+    this.innerHtml = verMais ? 'Ler mais' : 'Ler menos';
+});
+
+
   return (
     <div classname="base-projeto">
       <Header />
@@ -90,33 +99,42 @@ function Home() {
         <ul>
 
           <li class="li-inicio li-1">
-            <h2>Resgate na loja</h2>
-            <a href=""><p>Ver Regras</p></a>
+            <div>
+              <h2>Resgate na loja</h2>
+              <a href=""><p>Ver Regras</p></a>
+            </div>
           </li>
 
           <li class="li-inicio li-2">
-            <h2>Frete Gratis</h2>
-            <a href=""><p>Ver Regras</p></a>
+            <div>
+              <h2>Frete Gratis</h2>
+              <a href=""><p>Ver Regras</p></a>
+            </div>
           </li>
 
           <li class="li-inicio li-3">
-            <h2>Qualidade dos produtos</h2>
-            <a href=""><p>Ver Regras</p></a>
+            <div>
+              <h2>Qualidade dos produtos</h2>
+              <a href=""><p>Ver Regras</p></a>
+            </div>
           </li>
 
           <li class="li-inicio li-4">
-            <h2><b>Descontos</b></h2>
-            <a href=""><p>Ver Regras</p></a>
+            <div>
+              <h2><b>Descontos</b></h2>
+              <a href=""><p>Ver Regras</p></a>
+            </div>
           </li>
 
         </ul>
     </div>
+    <hr/>
     <div class="content-produtos">
       <h1>Produtos</h1>
       <div className="items-grid-container">
-                    <div className="items-grid">
+                    <div className="items-grid-home">
                         {
-                            parametros.map((item, i) => (
+                            parametros.map((item, i = 4) => (
                                 <div key={i} className="items-item-container">
                                     <a href={"item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
                                         <div className="item-img-container">
@@ -143,9 +161,10 @@ function Home() {
 
     </div>
 </div>
-
+<hr/>
+        <h1>Produtos</h1> 
         <div class="content-filtros">
-
+        
           <div class="filtros-div">
             <img src={imgCachorro}/>
             <h3>Cachorro</h3>
@@ -160,7 +179,22 @@ function Home() {
           </div>
         </div>
 
+        <hr/>
+
+        <div class="content-sobre-home-mais">
+          <h1 class="hSobre">PetShop</h1>
+          <p class="pSobre">Pet shop ou loja de animais é um estabelecimento comercial especializado em vender animais, geralmente filhotes, destinados a serem animais de estimação, bem como alimentos, acessórios e artigos para entusiastas, além de oferecer serviços de embelezamento como banho, tosa e perfumaria.Os principais animais comercializados nesses estabelecimentos são cães, gatos, pássaros e peixes ornamentais. Porém, muitas lojas também trabalham com espécimes exóticos como chinchilas, esquilos, furões, lagartos, cobras e tartarugas.</p>
+          <h2 class="hSobre">Animal de Estimação</h2>
+          <p class="pSobre">Um animal de estimação ,ou mascote, é um animal doméstico selecionado para o convívio com os seres humanos por questões de companheirismo ou divertimento, o que não significa que essa seja a única função dessas espécies na nossa sociedade.</p>
+          <h2 class="hSobre">Funções sociais</h2>
+          <p class="pSobre">Animais de estimação apresentam diversas funções na sociedade humana, sendo frequentemente citados como formas de se trazer conforto, companhia e aumentar a autoestima das pessoas. A psicologia reconhece que os efeitos benéficos do convívio com animais de estimação são diversos, tanto para adultos bem como para crianças com destaque à redução do stress, combate à crises de depressão e aumento do senso de responsabilidade.</p>
+          <p class="pSobre">Estudos envolvendo pessoas que mantém gatos como companhia indicam que existe correlação direta entre a presença desses animais e a melhoria da saúde de seus mantenedores humanos. Observou-se uma redução de 30% no risco de ocorrências de infartos nas pessoas que têm gatos como animais de estimação. O provável motivo é que o convívio com esses pequenos felinos seria capaz de minimizar os níveis de estresse, um dos principais responsáveis pelo surgimento de problemas cardiovasculares.</p>
         </div>
+        <button id="sobre-button" type="button">Ler mais</button>
+
+
+        </div>
+
 </div>
   );
 }

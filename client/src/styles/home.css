@@ -6,7 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 
 .full-content{
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     padding: 3vh 10vw;
     align-content: center;
     align-text: center;
@@ -121,9 +122,13 @@ margin-left: 0%;
 }
 
 .li-inicio{
+    display: flex;
+    flex-direction: column;
     border-radius: 9px;
-    padding: 10px;
+    padding: 15px;
     margin: 3px;
+    align-items: center;
+    justify-content: center;
     background: rgb(171,150,219);
     background: linear-gradient(90deg, rgba(171,150,219,1) 0%, rgba(189,164,246,1) 50%, rgba(171,150,219,1) 100%);
     box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
@@ -134,11 +139,27 @@ margin-left: 0%;
 }
 /*Inicio*/
 
+hr{
+    background-color: #e0d6f9;
+    margin: 45px 10px;
+}
 
 /*Produtos*/
 .content-produtos{
     width: 100%;
-    margin-top: 45px;
+}
+
+.content-produtos > h1{
+
+}
+
+.items-grid-home{
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-row-gap: 2.5%;
+    grid-column-gap: 1.2%;
+    width: 100%;
 }
 /*Produtos*/
 
@@ -151,16 +172,50 @@ margin-left: 0%;
 }
 
 .filtros-div{
+    border: 6px solid #8e77c2;
+    border-radius: 20px;
+    background-color: #e0d6f9;
+    padding: 20px;
     width: 20vw;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
 .filtros-div > img{
-    min-width:180px;
-    max-width: 250px;
+    min-width:170px;
+    max-width: 200px;
+    min-height: 170px;
+    max-height: 200px;
     width: 50%;
+    margin:10px;
 }
 /*Filtros*/
+
+ /*Sobre home*/
+.content-sobre-home-mais{
+    padding: 20px;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.content-sobre-home-menos{
+    padding: 20px;
+    max-height: 10000px;
+    overflow: show;
+}
+
+.hSobre{
+    margin: 10px;
+}
+
+#sobre-button{
+    width: 100px;
+}
+
+.pSobre{
+    margin: 25px;
+    font-size: 25px;
+}
+  /*Sobre home*/

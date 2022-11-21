@@ -7,7 +7,9 @@ function sobre(){
     return (
         <div>
             <Header />
-        <h1>Sobre nós</h1>
+            <div class="full-content">
+                <h1>Sobre nós</h1>
+            </div>
         </div>
     )
 

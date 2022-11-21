@@ -31,10 +31,13 @@ function Itens() {
     return (
         <div classname="base-projeto">
             <Header />
+            <div class="full-content">
             <div className="items-main-div">
                 <div className="items-title">
                     <h1>Itens à venda</h1>
                 </div>
+
+                <hr/>
 
                 <div className="items-grid-container">
                     <div className="items-grid">
@@ -66,7 +69,7 @@ function Itens() {
 
 
                 </div>
-
+                </div>
             </div>
         </div>
 
