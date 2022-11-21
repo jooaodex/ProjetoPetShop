@@ -3,6 +3,7 @@ import Logo from './imgs/logo.png'
 import Banner1 from './imgs/teste2.png'
 import imgCachorro from './imgs/imgCachorro.png'
 import imgGato from './imgs/imgGato.png'
+import imgPeixe from './imgs/imgPeixe.png'
 import imgTodos from './imgs/imgTodos.png'
 import carrinho from './imgs/carrinho-compra.png'
 import { Link } from 'react-router-dom'
@@ -16,6 +17,15 @@ import { useLocation } from "react-router-dom";
 
 function Home() {
  
+//   const sobreMais = document.querySelector('div.content-sobre-home-mais');
+//   const botao = document.querySelector('button#sobre-button');
+//   botao.addEventListener('click', function() {
+//     var verMais = sobreMais.classList.contains('content-sobre-home-menos');
+//     sobreMais.classList.toggle('content-sobre-home-menos');
+//     this.innerHTML = verMais ? 'Ler mais' : 'Ler menos';
+// });
+
+
   const [parametros, setParametros] = useState([])
 
   const useQuery = () => new URLSearchParams(useLocation().search);
@@ -38,13 +48,7 @@ function Home() {
       })
   }, [])
 
-  var sobreMais = document.querySelector('div.content-sobre-home-mais');
-  var botao = document.querySelector('button#sobre-button');
-  botao.addEventListener('click', function() {
-    var verMais = sobreMais.ClassList.contains('content-sobre-home-menos');
-    sobreMais.classList.toggle('content-sobre-home-menos');
-    this.innerHtml = verMais ? 'Ler mais' : 'Ler menos';
-});
+
 
 
   return (
@@ -162,21 +166,32 @@ function Home() {
     </div>
 </div>
 <hr/>
-        <h1>Produtos</h1> 
+        <h1>Categorias</h1> 
         <div class="content-filtros">
-        
-          <div class="filtros-div">
-            <img src={imgCachorro}/>
-            <h3>Cachorro</h3>
-          </div>
-          <div class="filtros-div">
-            <img src={imgGato}/>
-            <h3>Gato</h3>
-          </div>
-          <div class="filtros-div">
-            <img src={imgTodos}/>
-            <h3>Todos</h3>
-          </div>
+          <a href="">
+            <div class="filtros-div">
+              <img src={imgCachorro}/>
+              <h3>Cachorro</h3>
+            </div>
+          </a>
+          <a href="">
+            <div class="filtros-div">
+              <img src={imgGato}/>
+              <h3>Gato</h3>
+            </div>
+          </a>
+          <a href="">
+            <div class="filtros-div">
+              <img src={imgPeixe}/>
+              <h3>Peixes</h3>
+            </div>
+          </a>
+          <a href="">
+           <div class="filtros-div">
+              <img src={imgTodos}/>
+              <h3>Todos</h3>
+            </div>
+          </a>
         </div>
 
         <hr/>
@@ -190,7 +205,8 @@ function Home() {
           <p class="pSobre">Animais de estimação apresentam diversas funções na sociedade humana, sendo frequentemente citados como formas de se trazer conforto, companhia e aumentar a autoestima das pessoas. A psicologia reconhece que os efeitos benéficos do convívio com animais de estimação são diversos, tanto para adultos bem como para crianças com destaque à redução do stress, combate à crises de depressão e aumento do senso de responsabilidade.</p>
           <p class="pSobre">Estudos envolvendo pessoas que mantém gatos como companhia indicam que existe correlação direta entre a presença desses animais e a melhoria da saúde de seus mantenedores humanos. Observou-se uma redução de 30% no risco de ocorrências de infartos nas pessoas que têm gatos como animais de estimação. O provável motivo é que o convívio com esses pequenos felinos seria capaz de minimizar os níveis de estresse, um dos principais responsáveis pelo surgimento de problemas cardiovasculares.</p>
         </div>
-        <button id="sobre-button" type="button">Ler mais</button>
+        <hr class="hr-no-margin"/>
+        <button id="sobre-button" type="button"><b>Ler mais</b></button>
 
 
         </div>
