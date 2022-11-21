@@ -44,7 +44,7 @@ function Itens() {
                         {
                             parametros.map((item, i) => (
                                 <div key={i} className="items-item-container">
-                                    <Link to={"item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
+                                    <Link to={"/item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
                                         <div className="item-img-container">
                                             <div className="item-img-container-inner">
                                                 <img className="item-img" src={item.imgUrl}></img>
