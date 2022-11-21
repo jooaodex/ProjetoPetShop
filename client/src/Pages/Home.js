@@ -1,30 +1,45 @@
 import { useState, useEffect } from "react";
 import Logo from './imgs/logo.png'
 import Banner1 from './imgs/teste2.png'
+import Banner2 from './imgs/banner2.jpg'
+import Banner3 from './imgs/banner3.jpg'
+import Banner4 from './imgs/banner4.jpg'
 import imgCachorro from './imgs/imgCachorro.png'
 import imgGato from './imgs/imgGato.png'
 import imgPeixe from './imgs/imgPeixe.png'
 import imgTodos from './imgs/imgTodos.png'
 import carrinho from './imgs/carrinho-compra.png'
-import { Link } from 'react-router-dom'
 import Calendar from 'react-calendar';
 import '../styles/home.css'
 import api from '../api.js'
 import Header from "../Components/Header";
-import { useLocation } from "react-router-dom";
-
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 
 function Home() {
  
-//   const sobreMais = document.querySelector('div.content-sobre-home-mais');
-//   const botao = document.querySelector('button#sobre-button');
-//   botao.addEventListener('click', function() {
-//     var verMais = sobreMais.classList.contains('content-sobre-home-menos');
-//     sobreMais.classList.toggle('content-sobre-home-menos');
-//     this.innerHTML = verMais ? 'Ler mais' : 'Ler menos';
-// });
+  const sobreMais = document.querySelector('div.content-sobre-home-mais');
+  function clickSobre() {
+    var verMais = sobreMais.classList.contains('content-sobre-home-menos');
+    sobreMais.classList.toggle('content-sobre-home-menos');
+    this.innerHTML = verMais ? 'Ler mais' : 'Ler menos';
+};
+const navigate = useNavigate();
+const SearchItemCachorro = () => {
+  navigate('/itens?search=Cachorro')
+}
 
+const SearchItemGato = () => {
+  navigate('/itens?search=Gato')
+}
+
+const SearchItemPeixe = () => {
+  navigate('/itens?search=Peixe')
+}
+
+const SearchItems = () => {
+  navigate('/itens')
+}
 
   const [parametros, setParametros] = useState([])
 
@@ -63,27 +78,19 @@ function Home() {
           <input class="input-slider" type="radio" name="radio" id="slide-2"/>
           <input class="input-slider" type="radio" name="radio" id="slide-3"/>
           <input class="input-slider" type="radio" name="radio" id="slide-4"/>
-          <input class="input-slider" type="radio" name="radio" id="slide-5"/>
-          <input class="input-slider" type="radio" name="radio" id="slide-6"/>
 
           {/* <!--imagens a serem trocadas--> */}
           <div class="slide-img s1">
-              <img src={Banner1} alt="img1"/>
+              <img src={Banner3} alt="img1"/>
           </div>
           <div class="slide-img s2">
-              <img src={Banner1} alt="img2"/>
+              <img src={Banner4} alt="img2"/>
           </div>
           <div class="slide-img s3">
-              <img src={Banner1} alt="img3"/>
+              <img src={Banner2} alt="img3"/>
           </div>
           <div class="slide-img s4">
               <img src={Banner1} alt="img4"/>
-          </div>
-          <div class="slide-img s5">
-              <img src={Banner1} alt="img5"/>
-          </div>
-          <div class="slide-img s6">
-              <img src={Banner1} alt="img6"/>
           </div>
 
           {/* <!--botões de navegação--> */}
@@ -92,8 +99,6 @@ function Home() {
               <label class="lbl-slide" for="slide-2"></label>
               <label class="lbl-slide" for="slide-3"></label>
               <label class="lbl-slide" for="slide-4"></label>
-              <label class="lbl-slide" for="slide-5"></label>
-              <label class="lbl-slide" for="slide-6"></label>
           </div>
       </div>
       
@@ -168,25 +173,25 @@ function Home() {
 <hr/>
         <h1>Categorias</h1> 
         <div class="content-filtros">
-          <a href="">
+          <a href="" onClick={SearchItemCachorro}>
             <div class="filtros-div">
               <img src={imgCachorro}/>
               <h3>Cachorro</h3>
             </div>
           </a>
-          <a href="">
+          <a href="" onClick={SearchItemGato}>
             <div class="filtros-div">
               <img src={imgGato}/>
               <h3>Gato</h3>
             </div>
           </a>
-          <a href="">
+          <a href="" onClick={SearchItemPeixe}>
             <div class="filtros-div">
               <img src={imgPeixe}/>
               <h3>Peixes</h3>
             </div>
           </a>
-          <a href="">
+          <a href="" onClick={SearchItems}>
            <div class="filtros-div">
               <img src={imgTodos}/>
               <h3>Todos</h3>
@@ -206,7 +211,7 @@ function Home() {
           <p class="pSobre">Estudos envolvendo pessoas que mantém gatos como companhia indicam que existe correlação direta entre a presença desses animais e a melhoria da saúde de seus mantenedores humanos. Observou-se uma redução de 30% no risco de ocorrências de infartos nas pessoas que têm gatos como animais de estimação. O provável motivo é que o convívio com esses pequenos felinos seria capaz de minimizar os níveis de estresse, um dos principais responsáveis pelo surgimento de problemas cardiovasculares.</p>
         </div>
         <hr class="hr-no-margin"/>
-        <button id="sobre-button" type="button"><b>Ler mais</b></button>
+        <button id="sobre-button" onClick={clickSobre} type="button"><b>Ler mais</b></button>
 
 
         </div>

@@ -104,7 +104,7 @@ export default function Header() {
                 </Toolbar>
 
                 <Toolbar sx={{ backgroundColor: '#a18fcf' }}>
-                    <Box sx={{ marginLeft: '20%', marginRight: '20%' }} >
+                    <Box sx={{ margin: 'auto'}} >
 
                         <Link to="/" style={{ textDecoration: 'none' }}>
                             <ButtonStyled id="servicos-button">
