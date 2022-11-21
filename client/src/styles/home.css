@@ -172,9 +172,6 @@ hr{
 }
 
 .filtros-div{
-    border: 6px solid #8e77c2;
-    border-radius: 20px;
-    background-color: #e0d6f9;
     padding: 20px;
     width: 20vw;
     display: flex;
@@ -198,12 +195,12 @@ hr{
     padding: 20px;
     max-height: 300px;
     overflow: hidden;
+    transition: max-height 1s;
 }
 
 .content-sobre-home-menos{
-    padding: 20px;
-    max-height: 10000px;
-    overflow: show;
+    max-height: 1550px;
+    overflow: visible;
 }
 
 .hSobre{
@@ -212,6 +209,23 @@ hr{
 
 #sobre-button{
     width: 100px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 18px;
+    color: blue;
+}
+
+#sobre-button:hover{
+    color: gray;
+    width: 120px;
+    font-size: 20px;
+    transition: 1s;
+}
+
+.hr-no-margin{
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
 .pSobre{
