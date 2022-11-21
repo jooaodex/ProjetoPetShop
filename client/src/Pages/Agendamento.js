@@ -9,7 +9,7 @@ function Agendamento() {
   return (
     <div className='agendamento'>
       <Header />
-
+    <div class="full-content">
       <div className='boxAgendamento'>
 
         <form>
@@ -80,7 +80,7 @@ function Agendamento() {
       </div>
      
     </div>
-
+    </div>
 
   )
 };

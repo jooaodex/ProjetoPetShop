@@ -9,7 +9,7 @@
 
 .full-content{
     height: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 3vh 10vw;
     align-content: center;
     align-text: center;
@@ -199,7 +199,7 @@ hr{
 }
 
 .hSobre{
-    margin: 10px;
+    margin: 15px;
 }
 
 #sobre-button{
