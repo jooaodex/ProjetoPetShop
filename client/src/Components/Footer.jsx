@@ -54,7 +54,7 @@ export default function FooterPetShop() {
                     <Contents>
                         <Title>
                             <Typography variant='h4'>
-                            Produtos
+                            Páginas
                             </Typography>
                         </Title>
                         
