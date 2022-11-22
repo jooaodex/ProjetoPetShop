@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import api from '../api.js'
 import Header from "../Components/Header.jsx";
 import { useNavigate, useLocation } from "react-router-dom";
+import FooterPetShop from "../Components/Footer.jsx";
 
 function Item() {
 
@@ -64,8 +65,6 @@ function Item() {
         else {
             window.alert('Preencha todos os campos!')
         }
-
-
     }
 
     return (
@@ -134,7 +133,7 @@ function Item() {
                     </div>
                 </div>
             </div>
-
+            <FooterPetShop />
         </div>
     )
 

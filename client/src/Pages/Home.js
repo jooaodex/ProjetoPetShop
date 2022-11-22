@@ -14,6 +14,7 @@ import '../styles/home.css'
 import api from '../api.js'
 import Header from "../Components/Header";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import FooterPetShop from "../Components/Footer";
 
 
 function Home() {
@@ -215,7 +216,7 @@ const SearchItems = () => {
 
 
         </div>
-
+    <FooterPetShop />
 </div>
   );
 }

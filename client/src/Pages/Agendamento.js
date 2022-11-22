@@ -3,6 +3,7 @@ import api from '../api.js'
 import { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import '../styles/agendamento.css'
+import FooterPetShop from '../Components/Footer.jsx';
 
 function Agendamento() {
 
@@ -80,6 +81,7 @@ function Agendamento() {
       </div>
      
     </div>
+    <FooterPetShop />
     </div>
 
   )

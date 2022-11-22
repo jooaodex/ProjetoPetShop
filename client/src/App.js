@@ -8,6 +8,7 @@ import Sobre from "./Pages/Sobre"
 import Itens from "./Pages/Itens"
 import Admin from "./Pages/Admin"
 import Item from "./Pages/Item"
+import Carrinho from "./Pages/Carrinho"
 
 import api from './api.js'
 import axios from 'axios'
@@ -25,6 +26,7 @@ function App() {
               <Route path="/itens" element={<Itens />}></Route>
               <Route path="/admin" element={<Admin />}></Route>
               <Route path="/item" element={<Item />}></Route>
+              <Route path="/carrinho" element={<Carrinho />}></Route>
           </Routes>
         </Router>
 

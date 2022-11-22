@@ -77,6 +77,20 @@
     padding-left: 15px;
 }
 
+.input-item-buy-cart{
+    border-width: 0px;
+    width: 60px;
+    height: 40px;
+    margin-left: 2vh;
+    border-radius: 10px;
+    background-color: #a18fcf;
+    font-size: 30px;
+    outline: none;
+    color: #f2f2f2;
+    text-align: center;
+    padding-left: 15px;
+}
+
 .item-div-desc{
     font-size: 18px;
     color: rgb(70, 70, 70);
