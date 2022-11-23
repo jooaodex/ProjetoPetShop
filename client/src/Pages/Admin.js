@@ -324,7 +324,7 @@ function Admin() {
         <div className="admin-main-div">
             <div className="admin-login-header">
                 <div className="admin-return-home">
-                    <div className="home-icon-div">
+                    <div onClick={() => navigate('/')} className="home-icon-div">
                         <HomeIcon sx={{ fontSize: 40, color: 'white' }} />
                     </div>
                 </div>
@@ -384,7 +384,7 @@ function Admin() {
         <div className="admin-main-div">
             <div className="admin-login-header">
                 <div className="admin-return-home">
-                    <div className="home-icon-div">
+                    <div onClick={() => navigate('/')} className="home-icon-div">
                         <HomeIcon sx={{ fontSize: 40, color: 'white' }} />
                     </div>
                 </div>

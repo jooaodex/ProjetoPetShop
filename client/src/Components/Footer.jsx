@@ -65,7 +65,7 @@ export default function FooterPetShop() {
                             <Link to="/itens" style={{  color: '#dedede'  }}>
                             Itens <br/><br/>
                             </Link>
-                            <Link to="/servicos" style={{  color: '#dedede'  }}>
+                            <Link to="/agendamento" style={{  color: '#dedede'  }}>
                             Serviços <br/><br/>
                             </Link>
                             <Link to="/sobre" style={{ color: '#dedede'  }}>

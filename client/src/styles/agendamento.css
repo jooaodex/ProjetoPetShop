@@ -35,6 +35,10 @@
     font-size: 15px; 
 }
 
+.centralizameio{
+    text-align: center;
+}
+
 .labelInput{
     position: absolute;
     top: -20px;

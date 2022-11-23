@@ -54,11 +54,6 @@ function Itens() {
                         {
                             parametros.map((item, i) => (
                                 <div key={i} className="items-item-container">
-
-                                    <IconButton onClick={() => AddToCart(item)} sx={{fontSize:30, color: '#a18fcf'}}>
-                                        <AddShoppingCartIcon />
-                                    </IconButton>
-
                                     <Link to={"/item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
                                         <div className="item-img-container">
                                             <div className="item-img-container-inner">

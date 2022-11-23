@@ -47,7 +47,7 @@ function Agendamento() {
     <div className='agendamento'>
       <Header />
       <div class="full-content">
-        <h1>Banho e Tosa</h1>
+        <h1 className='centralizameio'>Banho e Tosa</h1>
         <div className='boxAgendamento'>
 
           <form>

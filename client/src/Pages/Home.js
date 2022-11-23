@@ -144,7 +144,7 @@ const SearchItems = () => {
       <div className="items-grid-container">
                     <div className="items-grid-home">
                         {
-                            parametros.map((item, i = 4) => (
+                            parametros.map((item, i = 3) => (
                                 <div key={i} className="items-item-container">
                                     <a href={"item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
                                         <div className="item-img-container">
