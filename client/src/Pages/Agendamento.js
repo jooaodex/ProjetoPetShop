@@ -10,7 +10,8 @@ function Agendamento() {
   return (
     <div className='agendamento'>
       <Header />
-    <div class="full-content">
+      <div class="full-content">
+      <h1>Banho e Tosa</h1>
       <div className='boxAgendamento'>
 
         <form>
@@ -22,6 +23,7 @@ function Agendamento() {
             <input required type="text" name="nome" className='inputUser' />
             </div>
             <br></br><br></br>
+
 
             <div className='boxInput'>
             <label for="email" className='labelInput'>Telefone</label>
@@ -36,11 +38,12 @@ function Agendamento() {
             <br></br><br></br>
 
             <div className='boxInput'>
-            <label className='labelInput'>Tipo Animal</label>
+            <label className='labelInput' id='tipoAnimal'>Tipo Animal</label>
             <br></br>
             <select className='selectUser' required>
             <option>Cachorro</option>
             <option>Gato</option>
+            <option>Macaco</option>
             </select>
             </div>
             <br></br><br></br>
@@ -49,8 +52,9 @@ function Agendamento() {
             <label className='labelInput'>Serviço</label>
             <br></br>
             <select required className='selectUser'>
-            <option>Banho</option>
-            <option>Banho e tosa</option>
+            <option>Banho 40.0$</option>
+            <option>Tosa 20.0$</option>
+            <option>Banho e tosa 60.0$</option>
             </select>
             </div>
             <br></br><br></br>
@@ -80,9 +84,10 @@ function Agendamento() {
 
       </div>
      
-    </div>
-    <FooterPetShop />
-    </div>
+      </div>
+      <FooterPetShop />
+    </div> 
+
 
   )
 };
