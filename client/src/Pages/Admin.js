@@ -366,7 +366,7 @@ function Admin() {
                                 <div key={i} className='item-crud'>
                                     <div className="crud-id-orders crud-line">{item.idPedido}</div>
                                     <div className="crud-cpf-orders crud-line">{item.cpfCliente}</div>
-                                    <div className="crud-nameProduct-orders crud-line">{item.nomeProduto}</div>
+                                    <div className="crud-nameProduct-orders crud-line">{item.nomeItem}</div>
                                     <div className="crud-product-orders crud-line">{item.idProduto}</div>
                                     <div className="crud-qnt-orders crud-line">{item.quantidadeProduto}</div>
                                     <div className="crud-date-orders crud-line">{item.data}</div>
@@ -415,25 +415,27 @@ function Admin() {
 
                     <div className="admin-table">
                         <div className="header-crud">
-                            <div className="crud-id-schedules crud-line">id</div>
                             <div className="crud-nome-schedules crud-line">nomeCliente</div>
+                            <div className="crud-fone-schedules crud-line">foneCliente</div>
                             <div className="crud-cpf-schedules crud-line">cpfCliente</div>
                             <div className="crud-tipo-schedules crud-line">tipo</div>
                             <div className="crud-data-schedules crud-line">Data</div>
+                            <div className="crud-hour-schedules crud-line">Hora</div>
                             <div className="crud-specie-schedules crud-line">Espécie</div>
-                            <div className="crud-animal-schedules crud-line">NomeAnimal</div>
+                            <div className="crud-animal-schedules crud-line">PorteAnimal</div>
                         </div>
 
                         {
                             parametrosAgendamentos.map((item, i) => (
                                 <div key={i} className='item-crud'>
-                                    <div className="crud-id-schedules crud-line">{item.idAgendamento}</div>
                                     <div className="crud-nome-schedules crud-line">{item.nomeCliente}</div>
+                                    <div className="crud-fone-schedules crud-line">{item.telCliente}</div>
                                     <div className="crud-cpf-schedules crud-line">{item.cpfCliente}</div>
                                     <div className="crud-tipo-schedules crud-line">{item.tipoAgendamento}</div>
                                     <div className="crud-data-schedules crud-line">{item.dataAgendamento}</div>
+                                    <div className="crud-hour-schedules crud-line">{item.horaAgendamento}</div>
                                     <div className="crud-specie-schedules crud-line">{item.especieAnimal}</div>
-                                    <div className="crud-animal-schedules crud-line">{item.nomeAnimal}</div>
+                                    <div className="crud-animal-schedules crud-line">{item.porteAnimal}</div>
                                 </div>
                             ))
                         }

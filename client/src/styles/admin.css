@@ -359,24 +359,28 @@
 /* table agendamento */
 /* table agendamento */
 
-.crud-id-schedules{
-    width: 10%;
-}
-
 .crud-nome-schedules{
-    width: 20%;
+    width: 15%;
 }
 
 .crud-cpf-schedules{
     width: 10%;
 }
 
+.crud-fone-schedules{
+    width: 15%;
+}
+
 .crud-tipo-schedules{
     width: 10%;
 }
 
+.crud-hour-schedules{
+    width: 10%;
+}
+
 .crud-data-schedules{
-    width: 20%;
+    width: 15%;
 }
 
 .crud-specie-schedules{
@@ -384,5 +388,5 @@
 }
 
 .crud-animal-schedules{
-    width: 20%;
+    width: 15%;
 }
