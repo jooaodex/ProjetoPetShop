@@ -3,6 +3,16 @@ import api from '../api.js'
 import { useLocation } from "react-router-dom";
 import Header from "../Components/Header.jsx";
 import { Link } from 'react-router-dom'
+import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import FooterPetShop from "../Components/Footer.jsx";
+
+const cart = [];
+function AddToCart(item){
+    cart.push(item.idItem)
+    console.log(cart)
+    window.localStorage.setItem('lista_de_items', cart)
+}
 
 function Itens() {
 
@@ -38,7 +48,7 @@ function Itens() {
                 </div>
 
                 <hr/>
-
+                                        
                 <div className="items-grid-container">
                     <div className="items-grid">
                         {
@@ -71,6 +81,7 @@ function Itens() {
                 </div>
                 </div>
             </div>
+            <FooterPetShop />
         </div>
 
     );

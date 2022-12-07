@@ -1,3 +1,13 @@
+.temp-div{
+    width: 80%;
+    margin: auto;
+
+}
+.base-projeto{
+    background: rgb(252,234,252);
+    background: linear-gradient(180deg, rgba(252,234,252,1) 0%, rgba(255,255,233,1) 100%);
+}
+
 .content-sobre-imgs{
     display: flex;
     flex-direction: rows;
@@ -16,6 +26,7 @@
 .content-sobre-texto{
     display: flex;
     flex-direction: column;
+    text-align: justify;
 }
 
 .grandeH{

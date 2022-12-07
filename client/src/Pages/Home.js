@@ -14,6 +14,7 @@ import '../styles/home.css'
 import api from '../api.js'
 import Header from "../Components/Header";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import FooterPetShop from "../Components/Footer";
 
 
 function Home() {
@@ -143,7 +144,7 @@ const SearchItems = () => {
       <div className="items-grid-container">
                     <div className="items-grid-home">
                         {
-                            parametros.map((item, i = 4) => (
+                            parametros.map((item, i = 3) => (
                                 <div key={i} className="items-item-container">
                                     <a href={"item?id=" + item.idItem} style={{ textDecoration: 'none' }}>
                                         <div className="item-img-container">
@@ -215,7 +216,7 @@ const SearchItems = () => {
 
 
         </div>
-
+    <FooterPetShop />
 </div>
   );
 }

@@ -96,11 +96,7 @@ export default function Header() {
                             />
                         </form>
                     </Search>
-                
-
-                    <IconButton>
-                        <ShoppingCartIcon sx={{ fontSize: 30, color: '#f7f7f7' }} />
-                    </IconButton>
+            
                 </Toolbar>
 
                 <Toolbar sx={{ backgroundColor: '#a18fcf' }}>

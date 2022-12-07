@@ -47,11 +47,11 @@ app.get('/admin', function(req,res){
         if(erro){
             throw erro;
         }
-        db.query(`SELECT idPedido, cpfCliente, idProduto, quantidadeProduto, DATE_FORMAT(dataPedido, '%d-%m-%Y') as 'data' FROM petshop.pedidos`, function(erro,resultadoPedidos){
+        db.query(`SELECT p.idPedido, p.cpfCliente, i.nomeItem as 'nomeItem', p.idProduto, p.quantidadeProduto, DATE_FORMAT(p.dataPedido, '%d-%m-%Y') as 'data' FROM petshop.pedidos p INNER JOIN petshop.itens i ON p.idProduto = i.idItem`, function(erro,resultadoPedidos){
             if(erro){
                 throw erro;
             }
-            db.query(`SELECT * FROM petshop.agendamentos`, function(erro,resultadoAgendamentos){
+            db.query(`SELECT idAgendamento, nomeCliente, telCliente, cpfCliente, tipoAgendamento, DATE_FORMAT(dataAgendamento, '%d-%m-%Y') as 'dataAgendamento', horaAgendamento, especieAnimal, porteAnimal FROM petshop.agendamentos`, function(erro,resultadoAgendamentos){
                 if(erro){
                     throw erro;
                 }
@@ -76,15 +76,13 @@ app.post("/item/buyItem", function(req,res){
 })
 
 app.post("/agendamento/schedule", function(req,res){
-    db.query(`INSERT INTO petshop.agendamentos(nomeCliente, cpfCliente, tipoAgendamento, dataAgendamento, especieAnimal, nomeAnimal) VALUES (?,?,?,?,?,?)`,
-    [req.body.nomeCliente, req.body.cpfCliente, req.body.tipo, req.body.data, req.body.animal, req.body.nomeAnimal], function(erro){
+    db.query(`INSERT INTO petshop.agendamentos(nomeCliente, telCliente, cpfCliente, tipoAgendamento, dataAgendamento, horaAgendamento, especieAnimal, porteAnimal) VALUES (?,?,?,?,?,?,?,?)`,
+    [req.body.nomeCliente, req.body.telCliente, req.body.cpfCliente, req.body.tipoAgendamento, req.body.dataAgendamento, req.body.appt, req.body.especieAnimal, req.body.porteAnimal], function(erro){
         if(erro){
             res.status(200).send('Erro: ' + erro) 
         }
     })
 })
-
-
 
 app.post("/admin/insertItem", function(req,res){
     db.query(`INSERT INTO petshop.itens(nomeItem, imgUrl, precoItem, descricaoItem) VALUES (?,?,?,?)`,

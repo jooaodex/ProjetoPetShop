@@ -1,19 +1,17 @@
-import { Button } from "@mui/material";
 import Header from "../Components/Header";
-import Box from '@mui/material/Box';
 import imgSobre1 from './imgs/imgSobre1.jpg';
 import imgSobre2 from './imgs/imgSobre2.jpg';
 import imgSobre3 from './imgs/imgSobre3.jpg';
 import '../styles/sobre.css'
+import FooterPetShop from "../Components/Footer";
 
 function sobre(){
 
     return (
-        <div>
+        <div class="base-projeto">
             <Header />
-            <div class="full-content">
+            <div class="temp-div">
                 <h1 class="grandeH">Sobre nós</h1>
-
                 <div class="content-sobre-texto">
                     <h1 class="hSobre">Uni Pet Shop</h1>
                     <p class="pSobre">A UniPetShop, é a mais procurada loja de pets da Unibrasil, todos os estudantes e funcionários da empresa, sempre, sem menor via de dúvidas, recomenda à nós a todas as pessoas existentes no planeta Terra inteiro, já recebemos visitas importantes como Donald Trump, e até mesmo o ET Bilu, por isso pode ter certeza que tudo o que o cliente quer, nós temos disponível no precinho para vocês, além de cuidarmos dos pets da melhor forma possível, até mesmo o seu Dinossauro REX no Acre, podemos tosar as escamas dele também se preferir. Confie no nosso atendimento.</p>
@@ -41,7 +39,9 @@ function sobre(){
                     </div>
                 </div>
             </div>
+            <FooterPetShop />
         </div>
+        
     )
 
 

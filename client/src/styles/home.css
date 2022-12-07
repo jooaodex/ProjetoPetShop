@@ -12,7 +12,6 @@
     min-height: 80vh;
     padding: 3vh 10vw;
     align-content: center;
-    align-text: center;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -94,7 +93,7 @@ margin-left: 0%;
 .content-inicio > ul{
     display: grid;
     grid-template-areas: "p s t q";
-    display-template-columns: 10px 10px 10px 10px;
+    /* display-template-columns: 10px 10px 10px 10px; */
     list-style: none;
     padding: 10px;
     }
@@ -142,10 +141,6 @@ hr{
 /*Produtos*/
 .content-produtos{
     width: 100%;
-}
-
-.content-produtos > h1{
-
 }
 
 .items-grid-home{
